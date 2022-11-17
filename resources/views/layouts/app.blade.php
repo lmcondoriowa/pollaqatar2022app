@@ -74,6 +74,7 @@
                                 <a class="nav-link" href="#">Roles</a>
                                 <a class="nav-link" href="/usuarios">Usuarios</a>
                                 <a class="nav-link" href="/grupos">Grupos</a>
+                                <a class="nav-link" href="/paises">Paises</a>
                                 <a class="nav-link" href="#">Partidos</a>
                             </nav>
                         </div>
