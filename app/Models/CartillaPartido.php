@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class CartillaPartido extends Model
 {
     use HasFactory;
+
+    public function cartillas() {
+        return $this->belongsToMany(Cartilla::class);
+    }
 }

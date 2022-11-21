@@ -75,7 +75,7 @@
                                 <a class="nav-link" href="/usuarios">Usuarios</a>
                                 <a class="nav-link" href="/grupos">Grupos</a>
                                 <a class="nav-link" href="/paises">Paises</a>
-                                <a class="nav-link" href="#">Partidos</a>
+                                <a class="nav-link" href="/partidos">Partidos</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
