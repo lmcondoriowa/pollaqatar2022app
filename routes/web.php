@@ -41,12 +41,20 @@ Route::post('/paises/guardar',[PaisController::class, 'guardar'])->name('pais.gu
 Route::get('/paises/detalle/{id}',[PaisController::class, 'mostrar'])->name('pais.mostrar');
 Route::post('/paises/editar',[PaisController::class, 'editar'])->name('pais.editar');
 Route::get('/paises/eliminar/{id}',[PaisController::class, 'eliminar'])->name('pais.eliminar');
+Route::get('/paises/exportar/excel',[PaisController::class, 'exportarExcel'])->name('pais.excel');
 
 Route::get('/partidos',[PartidoController::class, 'index'])->name('partido.index');
 Route::get('/partidos/nuevo',[PartidoController::class, 'nuevo'])->name('partido.nuevo');
 Route::post('/partidos/guardar',[PartidoController::class, 'guardar'])->name('partido.guardar');
 Route::get('/partidos/detalle/{id}',[PartidoController::class, 'mostrar'])->name('partido.mostrar');
 Route::post('/partidos/editar',[PartidoController::class, 'editar'])->name('partido.editar');
+
+Route::get('/cartillas', [CartillaController::class, 'index'])->name('cartilla.index');;
+Route::get('/cartillas/nuevo', [CartillaController::class, 'nuevo'])->name('cartilla.nuevo');;
+Route::post('/cartillas/guardar', [CartillaController::class, 'guardar'])->name('cartilla.guardar');;
+Route::get('/cartillas/detalle/{id}',[CartillaController::class, 'mostrar'])->name('cartilla.mostrar');
+Route::post('/cartillas/editar',[CartillaController::class, 'editar'])->name('cartilla.editar');
+
 
 Route::group(['middleware'=>'auth'],function(){
 	Route::get('/home', [HomeController::class, 'index'])->name('home');

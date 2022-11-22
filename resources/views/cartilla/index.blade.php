@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="d-flex justify-content-between">
-    <h1>Géneros</h1>
+    <h1>Cartillas</h1>
     <div>
-        <a href="/cartilla/nuevo" class="btn btn-primary">Nuevo</a>
+        <a href="/cartillas/nuevo" class="btn btn-primary">Nuevo</a>
     </div>
 </div>
 
@@ -28,8 +28,8 @@
             <td>{{ $fila->estado }}</td>
             <td>{{ $fila->created_at }}</td>
             <td>
-                <a href="/cartilla/mostrar/{{$fila->id}}" class="btn btn-info">Editar</a>
-                <a href="/cartilla/eliminar/{{$fila->id}}"
+                <a href="/cartillas/detalle/{{$fila->id}}" class="btn btn-info">Editar</a>
+                <a href="/cartillas/eliminar/{{$fila->id}}"
                     onclick="return confirm('¿Estas seguro de eliminar este registro?')"
                     class="btn btn-danger">Eliminar</a>
             </td>

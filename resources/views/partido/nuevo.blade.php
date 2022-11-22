@@ -13,7 +13,7 @@
         <div class="mb-3 row">
             <label for="inputFechaPartido" class="col-sm-2 col-form-label">Fecha partido</label>
             <div class="col-sm-10">
-                <input type="datetime-local" name="fecha_partido" class="form-control" id="inputFechaPartido" min="1" />
+                <input type="datetime-local" name="fecha_partido" class="form-control" id="inputFechaPartido" />
             </div>
         </div>
         <div class="mb-3 row">

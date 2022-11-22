@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Pais;
 use App\Models\Grupo;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PaisesExport;
+
+
 class PaisController extends Controller
 {
     function index(){
@@ -73,6 +77,13 @@ class PaisController extends Controller
     	$pais->delete();
     	return redirect('/paises');
     }
+
+	function exportarExcel(){
+    	$hoy = date('dmYhis');
+    	$nombreArchivo = "reporte_pais_$hoy.xlsx";
+    	return Excel::download(new PaisesExport, $nombreArchivo);
+	}
+
 
 
 }

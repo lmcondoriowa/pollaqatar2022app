@@ -5,6 +5,7 @@
     <div class="d-flex justify-content-between">
         <h1>Paises</h1>
         <div>
+            <a href="/paises/exportar/excel" class="btn btn-success">Exportar</a>
             <a href="/paises/nuevo" class="btn btn-primary">Nuevo</a>
         </div>
     </div>
