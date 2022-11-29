@@ -12,6 +12,7 @@
     <div class="d-flex justify-content-between">
         <h1>Editar Cartilla</h1>
         <div>
+            <a href="/cartillas/exportar/pdf/{{$cartilla->id}}" class="btn btn-danger" target="_blank">Descargar PDF</a>
             <a href="/cartillas" class="btn btn-secondary">Regresar</a>
         </div>
     </div>

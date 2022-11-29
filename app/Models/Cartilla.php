@@ -14,6 +14,6 @@ class Cartilla extends Model
     }
 
     public function cartillapartidos() {
-        return $this->belongsToMany(CartillaPartido::class);
+        return $this->hasMany(CartillaPartido::class);
     }
 }

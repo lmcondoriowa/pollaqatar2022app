@@ -19,7 +19,9 @@
 				<th>Fecha Partido</th>
 				<th>Valoración</th>
 				<th>Estado</th>
+				@auth
 				<th>Acciones</th>
+				@endauth
 			</tr>
 		</thead>
 		<tbody>
@@ -31,12 +33,14 @@
 				<th>{{ $item->visitante_goal }}</th>
 				<th>{{ $item->pais_visitante->nombre }}</th>
 				<th>{{ $item->fecha_partido }}</th>
-				<th>{{ $item->valoración }}</th>
+				<th>{{ $item->valoracion }}</th>
 				<th>{{ $item->estado }}</th>
+				@auth
 				<th>
 					<a href="/partidos/detalle/{{ $item->id }}" class="btn btn-info">Editar</a>
 					<a href="/partidos/eliminar/{{ $item->id }}" class="btn btn-danger">Eliminar</a>
 				</th>
+				@endauth
 			</tr>
 			@endforeach
 		</tbody>

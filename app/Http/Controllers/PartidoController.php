@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Partido;
 use App\Models\Pais;
+use App\Models\CartillaPartido;
 
 class PartidoController extends Controller
 {
@@ -49,9 +50,47 @@ class PartidoController extends Controller
     	$partido->visitante_goal = $request->visitante_goal;
     	$partido->fecha_partido = $request->fecha_partido;
         $partido->estado = $request->estado;
+
+		if ( !is_null($partido->local_goal) && !is_null($partido->local_goal) ){
+			if ($request->local_goal > $request->visitante_goal ) {
+				$partido->valoracion	= 'L';
+			} else {
+				if ($request->visitante_goal > $request->local_goal ) {
+					$partido->valoracion	= 'V';
+				} else {
+					$partido->valoracion	= 'E';
+				}
+			}
+			$partido->estado = "C";
+		}
+
     	$partido->save();
+
+		if (!is_null($partido->valoracion)) {
+			$this->valorarCartillaPartido($request->id);
+		}
+		
     	return redirect('/partidos');
     }
+
+	function valorarCartillaPartido($partido_id){
+		$partido = Partido::find($partido_id);
+		$cartillaPartidos = CartillaPartido::where('partido_id', $partido_id)->get();
+
+		foreach ($cartillaPartidos as $item) {
+			$item->puntaje = 0;
+			if ($partido->valoracion == $item->valoracion) {
+				$item->puntaje = $item->puntaje + 2;
+			}
+
+			if ($partido->local_goal == $item->local_goal && $partido->visitante_goal == $item->visitante_goal) {
+				$item->puntaje = $item->puntaje + 2;
+			}
+			
+			$item->save();
+		}
+
+	}
 
 
 }

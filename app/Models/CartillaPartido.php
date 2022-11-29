@@ -15,4 +15,8 @@ class CartillaPartido extends Model
     public function cartillas() {
         return $this->belongsToMany(Cartilla::class);
     }
+
+    public function partidos() {
+        return $this->hasMany(Partido::class);
+    }
 }
