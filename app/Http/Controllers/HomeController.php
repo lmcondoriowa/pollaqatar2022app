@@ -12,7 +12,7 @@ class HomeController extends Controller
         $puntajes = DB::table('cartillas')
         ->join('cartillapartidos', 'cartillas.id', '=', 'cartillapartidos.cartilla_id')
         ->select(DB::raw('sum(cartillapartidos.puntaje) as total_puntaje'), 'cartillas.descripcion as cartillas_descripcion')  
-        ->groupBy('cartillas.id')
+        ->groupBy('cartillas.id','cartillas.descripcion')
         ->orderByRaw('2 Desc')
         ->get();
         
