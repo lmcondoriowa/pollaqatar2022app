@@ -57,6 +57,25 @@
                 </select>
             </div>
         </div>
+        <div class="mb-3 row">
+            <div class="col-md-6">
+                <div class="mb-4 row">
+                    <label for="inputLocalGoalPenal" class="col-sm-4 col-form-label">Local Gol Penal</label>
+                    <div class="col-sm-8">
+                        <input type="number" name="local_goal_penal" class="form-control" id="inputLocalGoalPenal" min="0" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3 row">
+                    <label for="inputVisitanteGoalPenal" class="col-sm-4 col-form-label">Visitante Gol Penal</label>
+                    <div class="col-sm-8">
+                        <input type="number" name="visitante_goal_penal" class="form-control" id="inputVisitanteGoalPenal"
+                            min="0" />
+                    </div>
+                </div>
+            </div>
+        </div>
         <div>
             <button type="submit" class="btn btn-primary">Guardar</button>
         </div>

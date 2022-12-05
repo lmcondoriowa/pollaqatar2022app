@@ -29,6 +29,8 @@ class PartidoController extends Controller
         $partido->pais_visitante_id = $request->pais_visitante;
     	$partido->local_goal = $request->local_goal;
     	$partido->visitante_goal = $request->visitante_goal;
+    	$partido->local_goal_penal = $request->local_goal_penal;
+    	$partido->visitante_goal_penal = $request->visitante_goal_penal;
     	$partido->fecha_partido = $request->fecha_partido;
     	$partido->save();
     	return redirect('/partidos');
@@ -48,6 +50,8 @@ class PartidoController extends Controller
         $partido->pais_visitante_id = $request->pais_visitante;
     	$partido->local_goal = $request->local_goal;
     	$partido->visitante_goal = $request->visitante_goal;
+		$partido->local_goal_penal = $request->local_goal_penal;
+    	$partido->visitante_goal_penal = $request->visitante_goal_penal;
     	$partido->fecha_partido = $request->fecha_partido;
         $partido->estado = $request->estado;
 
@@ -62,6 +66,20 @@ class PartidoController extends Controller
 				}
 			}
 			$partido->estado = "C";
+		}
+
+		if ($partido->valoracion	== 'E') {
+			if ( !is_null($partido->local_goal_penal) && !is_null($partido->local_goal_penal) ){
+				if ($request->local_goal_penal > $request->visitante_goal_penal ) {
+					$partido->valoracion_penal	= 'L';
+				} else {
+					if ($request->visitante_goal_penal > $request->local_goal_penal ) {
+						$partido->valoracion_penal	= 'V';
+					} else {
+						$partido->valoracion_penal	= 'E';
+					}
+				}
+			}
 		}
 
     	$partido->save();
@@ -85,6 +103,16 @@ class PartidoController extends Controller
 
 			if ($partido->local_goal == $item->local_goal && $partido->visitante_goal == $item->visitante_goal) {
 				$item->puntaje = $item->puntaje + 2;
+			}
+
+			if ($partido->valoracion == 'E') {
+				if ($partido->valoracion_penal == $item->valoracion_penal) {
+					$item->puntaje = $item->puntaje + 2;
+				}
+	
+				if ($partido->local_goal_penal == $item->local_goal_penal && $partido->visitante_goal_penal == $item->visitante_goal_penal) {
+					$item->puntaje = $item->puntaje + 2;
+				}
 			}
 			
 			$item->save();

@@ -75,6 +75,27 @@
         </div>
 
         <div class="mb-3 row">
+            <div class="col-md-6">
+                <div class="mb-4 row">
+                    <label for="inputLocalGoalPenal" class="col-sm-4 col-form-label">Local Gol Penal</label>
+                    <div class="col-sm-8">
+                        <input type="number" name="local_goal_penal" class="form-control" id="inputLocalGoalPenal"
+                            min="0" value="{{$partido->local_goal_penal}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3 row">
+                    <label for="inputVisitanteGoalPenal" class="col-sm-4 col-form-label">Visitante Gol Penal</label>
+                    <div class="col-sm-8">
+                        <input type="number" name="visitante_goal_penal" class="form-control"
+                            id="inputVisitanteGoalPenal" min="0" value="{{$partido->visitante_goal_penal}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 row">
             <label for="inputEstado" class="col-sm-2 col-form-label">Estado</label>
             <div class="col-sm-10">
                 <select name="estado" class="form-select" id="inputEstado" required>

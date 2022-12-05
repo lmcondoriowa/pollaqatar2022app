@@ -22,6 +22,9 @@ return new class extends Migration
             $table->integer('local_goal')->nullable();
             $table->integer('visitante_goal')->nullable();
             $table->char('valoracion',1)->nullable()->comment('L:local | V:visitante | E:empate');
+            $table->integer('local_goal_penal')->nullable();
+            $table->integer('visitante_goal_penal')->nullable();
+            $table->char('valoracion_penal',1)->nullable()->comment('L:local | V:visitante | E:empate');
             $table->char('estado',1)->default('A')->comment('A:abierto | C:cerrado');
             $table->timestamps();
         });

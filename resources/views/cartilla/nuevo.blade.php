@@ -37,6 +37,8 @@
                         <th>Local Gol</th>
                         <th>Visitante Gol</th>
                         <th>Visitante</th>
+                        <th>Local Gol Penal</th>
+                        <th>Visitante Gol Penal</th>
                     </tr>
 
                 </thead>
@@ -65,7 +67,14 @@
                             <input type="text" name="pais_visitante" class="form-control" id="inputPaisVisitante"
                                 min="0" value="{{ $item->pais_visitante->nombre }}" readonly />
                         </td>
-
+                        <td>
+                            <input type="number" name="local_goal_penal[]" class="form-control" id="inputLocalGoalPenal"
+                                min="0" value="0" />
+                        </td>
+                        <td>
+                            <input type="number" name="visitante_goal_penal[]" class="form-control"
+                                id="inputVisitanteGoalPenal" min="0" value="0" />
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

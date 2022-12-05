@@ -20,6 +20,9 @@ return new class extends Migration
             $table->integer('local_goal')->default(0);
             $table->integer('visitante_goal')->default(0);
             $table->char('valoracion',1)->nullable()->comment('L:local | V:visitante | E:empate');
+            $table->integer('local_goal_penal')->default(0);
+            $table->integer('visitante_goal_penal')->default(0);
+            $table->char('valoracion_penal',1)->nullable()->comment('L:local | V:visitante | E:empate');
             $table->integer('puntaje')->default(0);
             $table->char('estado',1)->default('A')->comment('A:abierto | C:cerrado');
             $table->timestamps();
