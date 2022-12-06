@@ -36,9 +36,13 @@
                 <th>Local Gol</th>
                 <th>Visitante</th>
                 <th>Visitante Gol</th>
+                <th>Local Gol Penal</th>
+                <th>Visitante Gol Penal</th>
                 <th>Puntaje</th>
                 <th>Res.</th>
                 <th>Res.</th>
+                <th>Res. Penal</th>
+                <th>Res. Penal</th>
             </tr>
 
         </thead>
@@ -53,9 +57,13 @@
                 <td style="text-align: center;">{{ $item->cartillapartidos_local_goal }}</td>
                 <td>{{ $item->paises_visitante_nombre }}</td>
                 <td style="text-align: center;">{{ $item->cartillapartidos_visitante_goal }}</td>
+                <td style="text-align: center;">{{ $item->cartillapartidos_local_goal_penal }}</td>
+                <td style="text-align: center;">{{ $item->cartillapartidos_visitante_goal_penal }}</td>
                 <td style="text-align: center;">{{ $item->cartillapartidos_puntaje }}</td>
                 <td style="text-align: center;">{{ $item->partidos_local_goal }}</td>
                 <td style="text-align: center;">{{ $item->partidos_visitante_goal }}</td>
+                <td style="text-align: center;">{{ $item->partidos_local_goal_penal }}</td>
+                <td style="text-align: center;">{{ $item->partidos_visitante_goal_penal }}</td>
 
                 {{ $puntaje_total = $puntaje_total + $item->cartillapartidos_puntaje; }}
             </tr>
@@ -63,6 +71,8 @@
         </tbody>
         <tfoot>
             <tr>
+                <th></th>
+                <th></th>
                 <th></th>
                 <th></th>
                 <th></th>

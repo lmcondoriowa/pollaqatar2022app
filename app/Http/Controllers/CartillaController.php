@@ -104,15 +104,19 @@ class CartillaController extends Controller
 				'paises_local.nombre as paises_local_nombre',
 				'paises_local.bandera as paises_local_bandera',
 				'cartillapartidos.local_goal as cartillapartidos_local_goal',
+				'cartillapartidos.local_goal_penal as cartillapartidos_local_goal_penal',
 				'partidos.local_goal as partidos_local_goal',
+				'partidos.local_goal_penal as partidos_local_goal_penal',
 				'paises_visitante.nombre as paises_visitante_nombre',
 				'paises_visitante.bandera as paises_visitante_bandera',
 				'cartillapartidos.visitante_goal as cartillapartidos_visitante_goal',
+				'cartillapartidos.visitante_goal_penal as cartillapartidos_visitante_goal_penal',
 				'partidos.visitante_goal as partidos_visitante_goal',
+				'partidos.visitante_goal_penal as partidos_visitante_goal_penal',
 				'cartillapartidos.puntaje as cartillapartidos_puntaje')
 			->where('cartillapartidos.cartilla_id', $id)
-			->orderBy('grupos.nombre', 'asc')
 			->orderBy('partidos.fecha_partido', 'asc')
+			->orderBy('grupos.nombre', 'asc')
 			->get();
 
 
